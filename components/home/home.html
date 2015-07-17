@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div ng-if="errorMessage">
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> {{errorMessage}}
+        </div>
+    </div>
+    <div class="row-fluid" ng-if="!errorMessage">
+        <div class="col-sm-12">
+            <div class="whiteBox">
+                <div style="text-align:center;" ng-if="tokenSet != false">
+                    <button class="btn btn-default" ng-click="setDefaults(true)">Start Again</button>
+                </div>
+                    <div ng-if="tokenSet == false">
+                        <p>Enter your <a target="_blank" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">GitHub personal authorization key and click the save button.</a>.<p>
+                        <input type="text" class="form-control" placeholder="Access token" aria-describedby="sizing-addon2" ng-model="token">
+                        <br/><button ng-click="saveToken(token)" class="btn btn-default">Save</button>
+                </div>
+                <div ng-if="tokenSet == true && repoSet == false" ng-repeat="repo in repoData">
+                    <div class="radio">
+                      <label><input type="radio" name="optrepo" ng-model="repoName" ng-click="saveRepo(repo.full_name)"> {{repo.full_name}}</label>
+                    </div>
+                </div>
+                <div ng-if="tokenSet == true && repoSet == true && milestoneName == false" ng-repeat="milestone in milestonesData">
+                    <div class="radio">
+                      <label><input type="radio" name="optmilestone" ng-model="milestoneName" ng-click="saveMilestone(milestone.title, milestone.number)"> {{milestone.title}}</label>
+                    </div>
+                </div>
+                <div class="svgCenter dashboard" ng-if="!results && tokenSet == true && repoSet == true && !milestonesData || !results && tokenSet == true && !repoData && !milestonesData || !results && repoSet == true && !milestonesData">
+                    <div class="dashboard" ng-include="'shared/loading/loading.html'"></div>
+                </div>
+                <div ng-if="results">
+                    <h3>Release notes for: {{milestoneName}}</h3>
+                    <div ng-repeat="result in results">
+                        <div class="result">
+                            <div ng-if="result.state == 'closed'">
+                                <div class="state state-closed">
+                                    <span class="octicon octicon-issue-closed"></span>
+                                    Closed
+                                </div>
+                            </div>
+                            <div ng-if="result.state == 'open'">
+                                <div class="state state-open">
+                                    <span class="octicon octicon-issue-open"></span>
+                                    Open
+                                </div>
+                            </div>
+                            <a href="{{result.url| split}}">{{result.title}}</a><br/><span>Creator: <a href="{{result.user.html_url}}">{{result.user.login}}</a></span> | <span>Created on: {{result.created_at}}</span> | <span>Last updated: {{result.updated_at}}</span>
+                            <br/>Labels: <br/><span ng-repeat="label in result.labels"> <span class="btn btn-small" style="background-color:#{{label.color}};">{{label.name}}</span></span>
+                        </div>
+                        <div ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

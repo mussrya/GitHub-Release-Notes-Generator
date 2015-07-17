@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default" role="navigation" ng-controller="HeaderController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navbarTitle" href="/#/home">
+                GitHub Release Notes Generator
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a>
+                </li>
+            </ul>
+            <div ng-if="">
+                <button ng-click="logout()" class="btn btn-primary pull-right customMargin">Logout</button>
+            </div>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+</nav>

@@ -1,0 +1,133 @@
+/* Core */
+
+body {
+    background: #fff;
+    height: 100%;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h3 {
+    margin-top: 0px;
+}
+a {
+    color: #4078c0;
+    outline: none;
+}
+a:hover {
+    color: #4078c0;
+    text-decoration: none;
+}
+div.containerLg {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header */
+
+nav.navbar-default {
+    background: #f5f5f5;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0;
+}
+nav.navbar-default .navbar-brand {
+    color: #333;
+    font-size: 18px;
+    padding: 15px 15px;
+    font-weight: 600;
+}
+nav.navbar-default .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+a.navbarTitle:hover,
+a.navbarTitle:active,
+a.navbarTitle:focus {
+    color: #4078c0!important;
+}
+nav.navbar-default .navbar-nav>.active>a:focus,
+nav.navbar-default .navbar-nav>.active>a:hover {
+    background: #f5f5f5;
+    color: #4078c0;
+    font-weight: 600;
+}
+nav.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFFFFF;
+}
+nav.navbar-default .navbar-toggle:focus,
+nav.navbar-default .navbar-toggle:hover {
+    background-color: #00BCD4;
+}
+nav.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #00BCD4;
+}
+@media (min-width: 300px) {
+    nav.navbar>.container .navbar-brand,
+    nav.navbar>.container-fluid .navbar-brand {
+        font-size: 20px;
+    }
+}
+@media (min-width: 768px) {
+    ul.navbar-nav {
+        margin-left: 30px;
+    }
+}
+@media (min-width: 268px) {
+    .nav-justified>li {
+        display: table-cell;
+        width: 1%;
+    }
+}
+.pull-right {
+    color: #fff;
+}
+.customMargin {
+    margin-top: 5px;
+}
+.whiteBox {
+    background: #fff;
+    padding: 10px;
+}
+
+/* Home */
+
+.result {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.state {
+    display: inline-block;
+    padding: 4px 8px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #999;
+    float: right;
+}
+.state-closed {
+    background-color: #bd2c00;
+}
+.state-open {
+    background-color: #6cc644;
+}
+.btn-small {
+    font-size: 12px;
+    padding: 3px;
+}
+
+/* Loading */
+
+.svgCenter {
+    text-align: center;
+}
+.svgLoader {
+    height: 15vmin;
+    margin-top: 60px;
+    vertical-align: top;
+    text-align: center;
+}
