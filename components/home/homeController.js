@@ -3,12 +3,14 @@
 
 app.controller('homeController', function ($scope, $http, $window, $location, localStorageService, localStorageSetGet) {
 
-    $scope.saveTokenUser = function (tokenPassed, usernamePassed) {
+    $scope.saveTokenUser = function (tokenPassed, usernamePassed, save) {
         $scope.tokenSet = true;
-        localStorageSetGet.set('token', tokenPassed);
-        localStorageSetGet.set('username', usernamePassed);
+        $scope.userSet = true;
         $scope.token = tokenPassed;
         $scope.username = usernamePassed;
+        if(save != false){$scope.token = btoa($scope.username+':'+$scope.token);}
+        localStorageSetGet.set('token', $scope.token);
+        localStorageSetGet.set('username', usernamePassed);
         $scope.getGitData('https://api.github.com/user/repos', 'getRepos');
     }
 
@@ -66,11 +68,12 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
             localStorageSetGet.set('username', '');
         }else{
             $scope.token = localStorageSetGet.get('token');
+            $scope.username = localStorageSetGet.get('username');
         }
         
         if ($scope.token) {
             setTimeout(function () {
-                $scope.saveTokenUser($scope.token, $scope.username);
+                $scope.saveTokenUser($scope.token, '', false);
             }, 0);
         }
         $scope.tokenSet = false;
