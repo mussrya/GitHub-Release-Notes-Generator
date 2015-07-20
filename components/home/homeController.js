@@ -3,10 +3,12 @@
 
 app.controller('homeController', function ($scope, $http, $window, $location, localStorageService, localStorageSetGet) {
 
-    $scope.saveToken = function (tokenPassed) {
+    $scope.saveTokenUser = function (tokenPassed, usernamePassed) {
         $scope.tokenSet = true;
         localStorageSetGet.set('token', tokenPassed);
+        localStorageSetGet.set('username', usernamePassed);
         $scope.token = tokenPassed;
+        $scope.username = usernamePassed;
         $scope.getGitData('https://api.github.com/user/repos', 'getRepos');
     }
 
@@ -24,7 +26,6 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     }
 
     $scope.getGitData = function (url, type) {
-        //$scope.token = 'bXVzc3J5YTpmOWMyMWZhYTk0YTc3YzQ3MTU4Y2UxNTg4OTllMzRhMDBlNTU5Zjc1';
         $scope.loading = true;
 
         // The GET request for getting data from the repo
@@ -60,17 +61,20 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     $scope.setDefaults = function (logout) {
         if(logout){
             $scope.token = '';
+            $scope.username = '';
             localStorageSetGet.set('token', '');
+            localStorageSetGet.set('username', '');
         }else{
             $scope.token = localStorageSetGet.get('token');
         }
         
         if ($scope.token) {
             setTimeout(function () {
-                $scope.saveToken($scope.token);
+                $scope.saveTokenUser($scope.token, $scope.username);
             }, 0);
         }
         $scope.tokenSet = false;
+        $scope.userSet = false;
         $scope.repoName = '';
         $scope.repoSet = false;
         $scope.milestoneName = '';
