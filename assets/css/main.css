@@ -13,7 +13,7 @@ a {
     outline: none;
 }
 a:hover {
-    color: #4078c0;
+    color: #777;
     text-decoration: none;
 }
 div.containerLg {
@@ -119,14 +119,18 @@ nav.navbar-default .navbar-toggle {
     font-size: 12px;
     padding: 3px;
 }
-
 .divider {
-  height: 1px;
-  width:100%;
-  display:block; /* for use on default inline elements like span */
-  margin: 9px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
+    height: 1px;
+    width: 100%;
+    display: block;
+    /* for use on default inline elements like span */
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.radio:hover {
+    color: #286090;
+    font-weight:600;
 }
 
 /* Loading */
