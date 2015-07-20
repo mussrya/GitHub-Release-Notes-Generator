@@ -7,7 +7,12 @@ app.controller('HeaderController', function ($scope, $location, localStorageServ
 
     $scope.logout = function(){
         localStorageSetGet.set('token', '');
+        localStorageSetGet.set('username', '');
         $location.path('#home');
     };
+    
+    $scope.$on("LocalStorageModule.notification.setitem", function() {
+       $scope.token = localStorageSetGet.get('token');
+   });
 
 });

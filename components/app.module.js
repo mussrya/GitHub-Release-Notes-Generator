@@ -2,8 +2,6 @@ var app = angular.module('releaseNotes', ['ui.bootstrap', "ngRoute", 'ngAnimate'
 
 app.filter('split', function () {
     return function (input) {
-        // do some bounds checking here to ensure it has that index
-        console.log(input);
         var inputFinal = input.replace(/api./g, "");
         var inputFinal = inputFinal.replace(/repos\//g, "");
         return inputFinal;

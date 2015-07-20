@@ -12,11 +12,11 @@
                     <button class="btn btn-default" ng-click="setDefaults(true)">Start Again</button>
                 </div>
                 <div ng-if="tokenSet == false">
-                    <p>Enter your <a target="_blank" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">GitHub personal authorization key and username then click the save button.</a>.
+                    <p>Enter your <a target="_blank" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">GitHub personal authorization key and username then click the save button</a>.
                         <p>
                             <input required type="text" class="form-control" placeholder="Access token" aria-describedby="sizing-addon2" ng-model="token">
                             <br/>
-                            <input type="text" class="form-control" placeholder="GitHub Username (not yet added)" aria-describedby="sizing-addon2" ng-model="username">
+                            <input type="text" class="form-control" placeholder="GitHub Username" aria-describedby="sizing-addon2" ng-model="username">
 
                             <br/>
                             <submit ng-click="saveTokenUser(token, username)" class="btn btn-default">Save</submit>
@@ -40,7 +40,8 @@
                     <h2>Release notes for: {{milestoneName}}</h2>
                     <h4>Issues closed: {{results[0].milestone.closed_issues}}</h4>
                     <h4>Issues open: {{results[0].milestone.open_issues}}</h4>
-                    <br/><h3>Issues closed:</h3>
+                    <br/>
+                    <h3>Issues closed:</h3>
                     <div class="divider"></div>
                     <div ng-repeat="result in results">
                         <div ng-if="result.state == 'closed'" class="result">
@@ -58,7 +59,8 @@
                         </div>
                     </div>
 
-                    <br/><h3>Issues open:</h3>
+                    <br/>
+                    <h3>Issues open:</h3>
                     <div class="divider"></div>
                     <div ng-repeat="result in results">
                         <div ng-if="result.state == 'open'" class="result">

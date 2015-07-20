@@ -11,6 +11,10 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
         if(save != false){$scope.token = btoa($scope.username+':'+$scope.token);}
         localStorageSetGet.set('token', $scope.token);
         localStorageSetGet.set('username', usernamePassed);
+        $scope.repoData = '';
+        $scope.milestonesData = '';
+        $scope.results = '';
+        
         $scope.getGitData('https://api.github.com/user/repos', 'getRepos');
     }
 
@@ -28,8 +32,6 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     }
 
     $scope.getGitData = function (url, type) {
-        $scope.loading = true;
-
         // The GET request for getting data from the repo
         var req = {
             method: 'GET',
@@ -60,15 +62,12 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     }
 
     // Setting up / clearing of the params
-    $scope.setDefaults = function (logout) {
-        if(logout){
-            $scope.token = '';
-            $scope.username = '';
-            localStorageSetGet.set('token', '');
-            localStorageSetGet.set('username', '');
-        }else{
-            $scope.token = localStorageSetGet.get('token');
-            $scope.username = localStorageSetGet.get('username');
+    $scope.setDefaults = function (pageLoaded) {
+        $scope.token = localStorageSetGet.get('token');
+        $scope.username = localStorageSetGet.get('username');
+        if(!pageLoaded){
+            $scope.tokenSet = false;
+            $scope.userSet = false;
         }
         
         if ($scope.token) {
@@ -76,16 +75,13 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
                 $scope.saveTokenUser($scope.token, '', false);
             }, 0);
         }
-        $scope.tokenSet = false;
-        $scope.userSet = false;
-        $scope.repoName = '';
-        $scope.repoSet = false;
-        $scope.milestoneName = '';
-        $scope.milestoneSet = 'false';
-        $scope.milestoneId = '';
-        $scope.issues = '';
-        $scope.loading = false;
-        $scope.results = '';
+            $scope.repoName = '';
+            $scope.repoSet = false;
+            $scope.milestoneName = '';
+            $scope.milestoneSet = 'false';
+            $scope.milestoneId = '';
+            $scope.issues = '';
+            $scope.results = '';
     }
 
     // Initial run
