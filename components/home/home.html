@@ -8,7 +8,7 @@
     <div class="row-fluid" ng-if="!errorMessage">
         <div class="col-sm-12">
             <div class="whiteBox">
-                <div style="text-align:center;" ng-if="tokenSet != false">
+                <div style="text-align:center;" ng-if="tokenSet != false && repoSet != false">
                     <button class="btn btn-default" ng-click="setDefaults(true)">Start Again</button>
                 </div>
                 <div ng-if="tokenSet == false">
@@ -20,7 +20,7 @@
                         <input required type="text" class="form-control" placeholder="GitHub Username" aria-describedby="sizing-addon2" ng-model="username">
 
                         <br/>
-                        <submit ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token, username)" class="btn btn-default">Save</submit>
+                        <input type="submit" ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token, username)" class="btn btn-default" value="Save"/>
                     </form>
                 </div>
                 <div ng-if="tokenSet == true && repoSet == false" ng-repeat="repo in repoData">
