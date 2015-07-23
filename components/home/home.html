@@ -20,7 +20,7 @@
                         <input required type="text" class="form-control" placeholder="GitHub Username" aria-describedby="sizing-addon2" ng-model="username">
 
                         <br/>
-                        <input type="submit" ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token, username)" class="btn btn-default" value="Save"/>
+                        <input type="submit" ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token, username)" class="btn btn-default btn-save" value="Save"/>
                     </form>
                 </div>
                 <div ng-if="tokenSet == true && repoSet == false" ng-repeat="repo in repoData">
@@ -38,7 +38,7 @@
                 <div class="svgCenter dashboard" ng-if="!results && tokenSet == true && repoSet == true && !milestonesData || !results && tokenSet == true && !repoData && !milestonesData || !results && repoSet == true && !milestonesData">
                     <div class="dashboard" ng-include="'shared/loading/loading.html'"></div>
                 </div>
-                <div ng-if="results">
+                <div class="results" ng-if="results">
                     <h2>Release notes for: {{milestoneName}}</h2>
                     <h4>Issues closed off: {{results[0].milestone.closed_issues}}</h4>
                     <h4>Issues remaining open: {{results[0].milestone.open_issues}}</h4>
@@ -53,7 +53,8 @@
                                 </div>
                                 <a href="{{result.url| split}}">{{result.title}}</a>
                                 <br/>
-                                <div ng-if="result.body">{{result.body}}
+                                <div ng-if="result.body">
+                                    <pre class="pre">{{result.body}}</pre>
                                     <br/>
                                 </div>
                                 <br/><span>Creator: <a href="{{result.user.html_url}}">{{result.user.login}}</a></span> | <span>Created on: {{result.created_at}}</span> | <span>Last updated: {{result.updated_at}}</span>
@@ -73,7 +74,8 @@
                                 </div>
                                 <a href="{{result.url| split}}">{{result.title}}</a>
                                 <br/>
-                                <div ng-if="result.body">{{result.body}}
+                                <div ng-if="result.body">
+                                    <pre class="pre">{{result.body}}</pre>
                                     <br/>
                                 </div>
                                 <br/><span>Creator: <a href="{{result.user.html_url}}">{{result.user.login}}</a></span> | <span>Created on: {{result.created_at}}</span> | <span>Last updated: {{result.updated_at}}</span>

@@ -21,6 +21,11 @@ div.containerLg {
     margin-left: auto;
     margin-right: auto;
 }
+.svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
 
 /* Header */
 
@@ -93,6 +98,17 @@ nav.navbar-default .navbar-toggle {
 
 /* Home */
 
+.results {
+    box-shadow: 0px 0px 20px #888888;
+    padding: 10px 20px 20px 20px;
+    margin-top: 20px;
+}
+.pre {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: 0 !important;
+    border: none !important;
+    padding: 0;
+}
 .result {
     border-bottom: 1px solid #ccc;
     padding: 5px;
@@ -119,6 +135,22 @@ nav.navbar-default .navbar-toggle {
     font-size: 12px;
     padding: 3px;
 }
+.btn-save {
+    background: url(/assets/img/si-glyph-floppy-disk.svg) no-repeat 10px center;
+    background-size: 12px 12px;
+    text-indent: 15px;
+}
+.btn-logout {
+    background: url(/assets/img/si-glyph-turn-off.svg) #286090 no-repeat 10px center;
+    background-size: 12px 12px;
+    text-indent: 15px;
+}
+.btn-logout:hover {
+    background: url(/assets/img/si-glyph-turn-off.svg) #3c7cb2 no-repeat 10px center;
+    background-size: 12px 12px;
+    text-indent: 15px;
+    border-color: #307aba;
+}
 .divider {
     height: 1px;
     width: 100%;
@@ -130,7 +162,7 @@ nav.navbar-default .navbar-toggle {
 }
 .radio:hover {
     color: #286090;
-    font-weight:600;
+    font-weight: 600;
 }
 
 /* Loading */
