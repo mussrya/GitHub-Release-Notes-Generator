@@ -21,7 +21,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     $scope.saveRepo = function (repoPassed) {
         $scope.repoSet = true;
         $scope.repoName = repoPassed;
-        $scope.getGitData('https://api.github.com/repos/' + $scope.repoName + '/milestones', 'getMilestones');
+        $scope.getGitData('https://api.github.com/repos/' + $scope.repoName + '/milestones?state=all', 'getMilestones');
     }
 
     $scope.saveMilestone = function (milestonePassed, milestoneId) {
@@ -32,6 +32,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     }
 
     $scope.getGitData = function (url, type) {
+        $scope.loading = true;
         // The GET request for getting data from the repo
         var req = {
             method: 'GET',
@@ -54,6 +55,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
                     $scope.results = data;
                     break;
             }
+            $scope.loading = false;
 
         }).
         error(function (data, status, headers, config) {

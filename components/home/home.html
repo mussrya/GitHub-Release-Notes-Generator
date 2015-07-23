@@ -20,22 +20,38 @@
                         <input required type="text" class="form-control" placeholder="GitHub Username" aria-describedby="sizing-addon2" ng-model="username">
 
                         <br/>
-                        <input type="submit" ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token, username)" class="btn btn-default btn-save" value="Save"/>
+                        <input type="submit" ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token, username)" class="btn btn-default btn-save" value="Save" />
                     </form>
                 </div>
-                <div ng-if="tokenSet == true && repoSet == false" ng-repeat="repo in repoData">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optrepo" ng-model="repoName" ng-click="saveRepo(repo.full_name)"> {{repo.full_name}}</label>
+                <div ng-if="tokenSet == true && repoSet == false && repoData">
+                    <input type="text" ng-model="repoSearch" class="form-control" placeholder="search repos">
+                    <div ng-repeat="repo in filteredRepoData = (repoData | filter:repoSearch)">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optrepo" ng-model="repoName" ng-click="saveRepo(repo.full_name)"> {{repo.full_name}}</label>
+                        </div>
+                    </div>
+                    <div ng-if="!filteredRepoData.length">
+                        <br/>
+                        <p>No results found for your search</p>
                     </div>
                 </div>
-                <div ng-if="tokenSet == true && repoSet == true && milestoneName == false" ng-repeat="milestone in milestonesData">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optmilestone" ng-model="milestoneName" ng-click="saveMilestone(milestone.title, milestone.number)"> {{milestone.title}}</label>
+                <div ng-if="tokenSet == true && repoSet == true && milestoneName == false && milestonesData">
+                    <br/>
+                    <input type="text" ng-model="milestoneSearch" class="form-control" placeholder="search milestones">
+
+                    <div ng-repeat="milestone in filteredMilestonesData = (milestonesData | filter:milestoneSearch) | orderBy:'state'">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optmilestone" ng-model="milestoneName" ng-click="saveMilestone(milestone.title, milestone.number)"> {{milestone.title}} - (state: {{milestone.state}})</label>
+                        </div>
+                    </div>
+                    <div ng-if="!filteredMilestonesData.length">
+                        <br/>
+                        <p>No results found for your search</p>
                     </div>
                 </div>
-                <div class="svgCenter dashboard" ng-if="!results && tokenSet == true && repoSet == true && !milestonesData || !results && tokenSet == true && !repoData && !milestonesData || !results && repoSet == true && !milestonesData">
+                <div class="svgCenter dashboard" ng-if="loading">
                     <div class="dashboard" ng-include="'shared/loading/loading.html'"></div>
                 </div>
                 <div class="results" ng-if="results">
