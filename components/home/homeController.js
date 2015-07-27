@@ -3,14 +3,11 @@
 
 app.controller('homeController', function ($scope, $http, $window, $location, localStorageService, localStorageSetGet) {
 
-    $scope.saveTokenUser = function (tokenPassed, usernamePassed, save) {
+    $scope.saveTokenUser = function (tokenPassed, save) {
         $scope.tokenSet = true;
-        $scope.userSet = true;
         $scope.token = tokenPassed;
-        $scope.username = usernamePassed;
-        if(save != false){$scope.token = btoa($scope.username+':'+$scope.token);}
+        if(save != false){$scope.token = btoa(' :'+$scope.token);}
         localStorageSetGet.set('token', $scope.token);
-        localStorageSetGet.set('username', usernamePassed);
         $scope.repoData = '';
         $scope.milestonesData = '';
         $scope.results = '';
@@ -66,15 +63,13 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     // Setting up / clearing of the params
     $scope.setDefaults = function (pageLoaded) {
         $scope.token = localStorageSetGet.get('token');
-        $scope.username = localStorageSetGet.get('username');
         if(!pageLoaded){
             $scope.tokenSet = false;
-            $scope.userSet = false;
         }
         
         if ($scope.token) {
             setTimeout(function () {
-                $scope.saveTokenUser($scope.token, '', false);
+                $scope.saveTokenUser($scope.token, false);
             }, 0);
         }
             $scope.repoName = '';
