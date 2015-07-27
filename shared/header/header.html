@@ -16,7 +16,7 @@
                 <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a>
                 </li>
             </ul>
-            <div ng-if="token">
+            <div class="btn-container" ng-if="token">
                 <button ng-click="logout()" class="btn btn-primary pull-right customMargin btn-logout">Logout</button>
             </div>
         </div>

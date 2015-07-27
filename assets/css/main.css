@@ -60,24 +60,46 @@ nav.navbar-default .navbar-toggle .icon-bar {
 }
 nav.navbar-default .navbar-toggle:focus,
 nav.navbar-default .navbar-toggle:hover {
-    background-color: #00BCD4;
+    background-color: #4078c0;
 }
 nav.navbar-default .navbar-toggle {
-    border-color: #fff;
+    border-color: #CCC;
+    background-color: #DDD;
 }
 .navbar-default .navbar-nav>li>a:hover {
-    color: #00BCD4;
+    color: #4078c0;
 }
+
 @media (min-width: 300px) {
     nav.navbar>.container .navbar-brand,
     nav.navbar>.container-fluid .navbar-brand {
         font-size: 20px;
     }
+    
+    .btn-container{
+        text-align:center;
+        margin-bottom:10px;
+    }
+    
+    .btn-logout{
+        float:none!important;
+    }
+    
 }
 @media (min-width: 768px) {
     ul.navbar-nav {
         margin-left: 30px;
     }
+    
+    .btn-container{
+    text-align:inherit;
+    margin-bottom:0;
+    }
+    
+    .btn-logout{
+        float:right!important;
+    }
+    
 }
 @media (min-width: 268px) {
     .nav-justified>li {
