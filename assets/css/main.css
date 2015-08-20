@@ -141,7 +141,6 @@ nav.navbar-default .navbar-toggle {
     padding: 4px 8px;
     font-weight: bold;
     line-height: 20px;
-    color: #fff!important;
     text-align: center;
     border-radius: 3px;
     background-color: #999;
@@ -154,6 +153,7 @@ nav.navbar-default .navbar-toggle {
     padding: 0px;
     background-color: #bd2c00;
     border: 12px solid #bd2c00;
+    color: #fff!important;
 }
 .state-open {
     background-color: #6cc644;
@@ -162,6 +162,7 @@ nav.navbar-default .navbar-toggle {
     padding: 0px;
     background-color: #6cc644;
     border: 12px solid #6cc644;
+    color: #fff!important;
 }
 
 .btn-small {
