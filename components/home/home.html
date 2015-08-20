@@ -11,7 +11,7 @@
                 <div style="text-align:center;" ng-if="tokenSet != false && repoSet != false">
                     <button class="btn btn-default btn-start" ng-click="setDefaults(true)">Start Again</button>
                     <span ng-if="results">
-                        <button class="btn btn-default btn-print"><a href="javascript:window.print()">Print</a></button>
+                        <a href="javascript:window.print()"><button class="btn btn-default btn-print">Print</button></a>
                     </span>
                 </div>
                 <div ng-if="tokenSet == false">
