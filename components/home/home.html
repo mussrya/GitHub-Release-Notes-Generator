@@ -73,7 +73,7 @@
                                 </div>
                                 <br/><span>Creator: <a href="{{result.user.html_url}}">{{result.user.login}}</a></span> | <span>Created on: {{result.created_at}}</span> | <span>Last updated: {{result.updated_at}}</span>
                                 <br/>Labels:
-                                <br/><span ng-repeat="label in result.labels"> <span class="btn btn-small" style="background-color:#{{label.color}};">{{label.name}}</span></span>
+                                <br/><span ng-repeat="label in result.labels"> <span class="btn btn-small" style="box-shadow inset 0 0 0 1000px #{{label.color}}; background-color:#{{label.color}}; border: 12px solid #{{label.color}};">{{label.name}}</span></span>
                             </div>
                         </div>
                     </div>

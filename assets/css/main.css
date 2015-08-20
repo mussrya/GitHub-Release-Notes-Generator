@@ -1,9 +1,5 @@
 /* Core */
 
-@media print {
-    body {-webkit-print-color-adjust: exact;}
-}
-
 body {
     background: #fff;
     height: 100%;
@@ -157,6 +153,17 @@ nav.navbar-default .navbar-toggle {
 .state-open {
     background-color: #6cc644;
 }
+
+@media print{
+    .btn-small{
+        -webkit-print-color-adjust: exact;
+        background-image: url("img/666666.png");
+        background-repeat: repeat;
+        line-height: 0px;
+        padding: 0px;
+    }
+}
+
 .btn-small {
     font-size: 12px;
     padding: 3px;
