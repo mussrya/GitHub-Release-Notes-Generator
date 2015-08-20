@@ -150,8 +150,6 @@ nav.navbar-default .navbar-toggle {
 .state-closed {
     background-color: #bd2c00;
     -webkit-print-color-adjust: exact;
-    background-image: url("img/666666.png");
-    background-repeat: repeat;
     line-height: 0px;
     padding: 0px;
     background-color: #bd2c00;
@@ -160,8 +158,6 @@ nav.navbar-default .navbar-toggle {
 .state-open {
     background-color: #6cc644;
     -webkit-print-color-adjust: exact;
-    background-image: url("img/666666.png");
-    background-repeat: repeat;
     line-height: 0px;
     padding: 0px;
     background-color: #6cc644;
@@ -172,8 +168,6 @@ nav.navbar-default .navbar-toggle {
     font-size: 12px;
     padding: 3px;
     -webkit-print-color-adjust: exact;
-    background-image: url("img/666666.png");
-    background-repeat: repeat;
     line-height: 0px;
     padding: 0px;
 }
