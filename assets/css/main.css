@@ -177,6 +177,9 @@ nav.navbar-default .navbar-toggle {
     background-size: 12px 12px;
     text-indent: 15px;
 }
+.btn-print a{
+    color:#ccc;
+}
 .btn-logout {
     background: url(/assets/img/si-glyph-turn-off.svg) #286090 no-repeat 10px center;
     background-size: 12px 12px;
