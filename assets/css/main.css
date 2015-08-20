@@ -149,24 +149,33 @@ nav.navbar-default .navbar-toggle {
 }
 .state-closed {
     background-color: #bd2c00;
+    -webkit-print-color-adjust: exact;
+    background-image: url("img/666666.png");
+    background-repeat: repeat;
+    line-height: 0px;
+    padding: 0px;
+    background-color: #bd2c00;
+    border: 12px solid #bd2c00;
 }
 .state-open {
     background-color: #6cc644;
-}
-
-@media print{
-    .btn-small{
-        -webkit-print-color-adjust: exact;
-        background-image: url("img/666666.png");
-        background-repeat: repeat;
-        line-height: 0px;
-        padding: 0px;
-    }
+    -webkit-print-color-adjust: exact;
+    background-image: url("img/666666.png");
+    background-repeat: repeat;
+    line-height: 0px;
+    padding: 0px;
+    background-color: #6cc644;
+    border: 12px solid #6cc644;
 }
 
 .btn-small {
     font-size: 12px;
     padding: 3px;
+    -webkit-print-color-adjust: exact;
+    background-image: url("img/666666.png");
+    background-repeat: repeat;
+    line-height: 0px;
+    padding: 0px;
 }
 .btn-save {
     background: url(/assets/img/si-glyph-floppy-disk.svg) no-repeat 10px center;
