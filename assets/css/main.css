@@ -215,5 +215,5 @@ nav.navbar-default .navbar-toggle {
 }
 
 @media print {
-    .btn{display:none!important;}
+    .btn-start{display:none!important;}
 }
