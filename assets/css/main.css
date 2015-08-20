@@ -1,5 +1,9 @@
 /* Core */
 
+@media print {
+    body {-webkit-print-color-adjust: exact;}
+}
+
 body {
     background: #fff;
     height: 100%;
