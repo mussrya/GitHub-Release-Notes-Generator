@@ -213,3 +213,7 @@ nav.navbar-default .navbar-toggle {
     vertical-align: top;
     text-align: center;
 }
+
+@media print {
+    button{display:none;}
+}
