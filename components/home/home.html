@@ -18,10 +18,7 @@
                     <p>Enter your <a target="_blank" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">GitHub personal authorization key then click the save button</a>.
                     </p>
                     <form name="signInForm">
-                        <input required type="text" class="form-control" placeholder="Access token" aria-describedby="sizing-addon2" ng-model="token">
-
-                        <br/>
-                        <input type="submit" ng-disabled="signInForm.$invalid" ng-click="saveTokenUser(token)" class="btn btn-default btn-save" value="Save" />
+                        <a href="https://github.com/login/oauth/authorize?client_id=fccd71711e22818e48c6"><input type="submit" ng-disabled="signInForm.$invalid" class="btn btn-default btn-save" value="Save" /></a>
                     </form>
                 </div>
                 <div ng-if="tokenSet == true && repoSet == false && repoData">
