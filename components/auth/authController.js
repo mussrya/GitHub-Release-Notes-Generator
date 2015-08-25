@@ -19,8 +19,7 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
   });
     
   $scope.saveTokenUser = function (tokenPassed, save) {
-    $scope.token = tokenPassed;
-    if(save != false){$scope.token = btoa(' :'+$scope.token);}
+    $scope.token = tokenPassed.replace(/(\r\n|\n|\r)/gm,"");
     localStorageSetGet.set('token', $scope.token);
     $location.path('#home');
   }
