@@ -7,7 +7,7 @@ app.controller('HeaderController', function ($scope, $location, localStorageServ
 
   $scope.logout = function(){
     localStorageSetGet.set('token', '');
-    $location.path('/home');
+    $location.path('home');
   };
     
   $scope.$on("LocalStorageModule.notification.setitem", function() {
