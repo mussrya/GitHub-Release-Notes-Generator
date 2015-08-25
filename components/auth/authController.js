@@ -9,10 +9,9 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
     
   $http.get('/token.php?code='+$scope.code).
   then(function(response) {
-    console.log(response);
-    console.log(response.data);
-      
-      
+    if(response.data){
+      $scope.saveTokenUser(response.data, true);
+    }    
   }, function(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
@@ -23,9 +22,7 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
     $scope.token = tokenPassed;
     if(save != false){$scope.token = btoa(' :'+$scope.token);}
     localStorageSetGet.set('token', $scope.token);
-    $scope.repoData = '';
-    $scope.milestonesData = '';
-    $scope.results = '';    
+    $location.path('/home');
   }
 
 });
