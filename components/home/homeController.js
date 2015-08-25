@@ -53,7 +53,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
       $scope.loading = false;
     }).
     error(function (data, status, headers, config) {
-      $scope.errorMessage = '!!ALERT!! - There was an error - Data: ' + data + ' - Status: ' + status 
+      $scope.errorMessage = 'Something went wrong: ' + data + ' - Status: ' + status 
       + ' - headers: ' + headers + ' - Config: ' + config;
     });
   }
