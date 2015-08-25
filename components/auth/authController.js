@@ -13,13 +13,16 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
       $scope.saveTokenUser(response.data, true);
     }    
   }, function(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
     console.log('error');
   });
     
   $scope.saveTokenUser = function (tokenPassed, save) {
-    $scope.token = tokenPassed.replace(/(\r\n|\n|\r)/gm,"");
+    $scope.token = tokenPassed;
+    if(save != false){$scope.token = btoa(' :'+$scope.token);}
     localStorageSetGet.set('token', $scope.token);
-    $location.path('home');
+    $location.path('#home');
   }
 
 });
