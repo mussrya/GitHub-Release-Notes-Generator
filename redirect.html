@@ -2,7 +2,9 @@
 <html>
     <head>
         <script>
-            console.log(window.url);
+            var url = window.location.href;
+	    url = url.split('=');
+	    window.location.href = 'http://gitread.io/#/auth?code='+url[1];
         </script>
     </head>
     <body>
