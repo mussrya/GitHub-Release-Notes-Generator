@@ -21,8 +21,8 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
   $scope.saveTokenUser = function (tokenPassed, save) {
     $scope.token = tokenPassed.replace(/(\r\n|\n|\r)/gm,"");
     localStorageSetGet.set('token', $scope.token);
-    $location.path('/home');
     $location.search() = {};
+    $location.path('/home');
   }
 
 });
