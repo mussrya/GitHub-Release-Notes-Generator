@@ -13,8 +13,6 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
       $scope.saveTokenUser(response.data, true);
     }    
   }, function(response) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
     console.log('error');
   });
     
