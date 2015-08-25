@@ -23,7 +23,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
       method: 'GET',
       url: url,
       headers: {
-        'Authorization': 'Basic ' + $scope.token
+        'Authorization': 'token ' + $scope.token
       }
     }
     $http(req).
