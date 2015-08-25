@@ -64,8 +64,14 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     $scope.issues = '';
     $scope.results = '';
   }
+  
+  if ($location.$$search.yourKey) {
+    delete $location.$$search.code;
+    $location.$$compose();
+  }
 
   // Initial run
   $scope.setDefaults();
+
     
 });
