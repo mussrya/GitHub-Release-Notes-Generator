@@ -10,6 +10,9 @@ app.controller('authController', function ($scope, $http, $window, $location, lo
   $http.get('/token.php?code='+$scope.code).
   then(function(response) {
     console.log(response);
+    console.log(response.data);
+      
+      
   }, function(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
