@@ -53,8 +53,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     if($scope.token){
       $scope.tokenSet = true;
       $scope.getGitData('https://api.github.com/user/repos', 'getRepos');
-    }
-    if(!pageLoaded){
+    }else{
       $scope.tokenSet = false;
     }
     $scope.repoName = '';
