@@ -2,17 +2,6 @@
 // Controller for the home page
 
 app.controller('homeController', function ($scope, $http, $window, $location, localStorageService, localStorageSetGet) {
-  $scope.saveTokenUser = function (tokenPassed, save) {
-    $scope.tokenSet = true;
-    $scope.token = tokenPassed;
-    if(save != false){$scope.token = btoa(' :'+$scope.token);}
-    localStorageSetGet.set('token', $scope.token);
-    $scope.repoData = '';
-    $scope.milestonesData = '';
-    $scope.results = '';    
-    $scope.getGitData('https://api.github.com/user/repos', 'getRepos');
-  }
-
   $scope.saveRepo = function (repoPassed) {
     $scope.repoSet = true;
     $scope.repoName = repoPassed;
@@ -61,14 +50,12 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
   // Setting up / clearing of the params
   $scope.setDefaults = function (pageLoaded) {
     $scope.token = localStorageSetGet.get('token');
+    if($scope.token){
+      $scope.tokenSet = true;
+      $scope.getGitData('https://api.github.com/user/repos', 'getRepos');
+    }
     if(!pageLoaded){
       $scope.tokenSet = false;
-    }
-        
-    if ($scope.token) {
-      setTimeout(function () {
-        $scope.saveTokenUser($scope.token, false);
-      }, 0);
     }
     $scope.repoName = '';
     $scope.repoSet = false;
