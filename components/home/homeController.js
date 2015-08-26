@@ -44,6 +44,7 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
     error(function (data, status, headers, config) {
       $scope.errorMessage = 'Something went wrong: ' + data + ' - Status: ' + status 
       + ' - headers: ' + headers + ' - Config: ' + config;
+      $scope.loading = false;
     });
   }
 
@@ -69,6 +70,6 @@ app.controller('homeController', function ($scope, $http, $window, $location, lo
 
   // Initial run
   $scope.setDefaults();
-
+  $scope.loading = false;
     
 });
