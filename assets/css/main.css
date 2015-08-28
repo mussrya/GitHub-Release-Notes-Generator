@@ -27,13 +27,18 @@ div.containerLg {
     height: 16px;
 }
 
+input[type=radio]:checked{
+    background-color: #fff9ea;
+}
+
 /* Header */
 
 nav.navbar-default {
-    background: #f5f5f5;
+    background: #fff;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
     border-radius: 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 nav.navbar-default .navbar-brand {
     color: #333;
@@ -43,6 +48,7 @@ nav.navbar-default .navbar-brand {
 }
 nav.navbar-default .navbar-nav>li>a {
     color: #FFFFFF;
+    transition: background-color 0.5s ease;
 }
 a.navbarTitle:hover,
 a.navbarTitle:active,
@@ -70,43 +76,6 @@ nav.navbar-default .navbar-toggle {
     color: #4078c0;
 }
 
-@media (min-width: 300px) {
-    nav.navbar>.container .navbar-brand,
-    nav.navbar>.container-fluid .navbar-brand {
-        font-size: 20px;
-    }
-    
-    .btn-container{
-        text-align:center;
-        margin-bottom:10px;
-    }
-    
-    .btn-logout{
-        float:none!important;
-    }
-    
-}
-@media (min-width: 768px) {
-    ul.navbar-nav {
-        margin-left: 30px;
-    }
-    
-    .btn-container{
-    text-align:inherit;
-    margin-bottom:0;
-    }
-    
-    .btn-logout{
-        float:right!important;
-    }
-    
-}
-@media (min-width: 268px) {
-    .nav-justified>li {
-        display: table-cell;
-        width: 1%;
-    }
-}
 .pull-right {
     color: #fff;
 }
@@ -115,7 +84,6 @@ nav.navbar-default .navbar-toggle {
 }
 .whiteBox {
     background: #fff;
-    padding: 10px;
 }
 
 /* Home */
@@ -184,6 +152,8 @@ nav.navbar-default .navbar-toggle {
     background: url(/assets/img/si-glyph-turn-off.svg) #286090 no-repeat 10px center;
     background-size: 12px 12px;
     text-indent: 15px;
+    border-color: #0099e6;
+    background-color: #0099e6;
 }
 .btn-logout:hover {
     background: url(/assets/img/si-glyph-turn-off.svg) #3c7cb2 no-repeat 10px center;
@@ -205,6 +175,68 @@ nav.navbar-default .navbar-toggle {
     font-weight: 600;
 }
 
+.gitBox{
+    border-radius: 3px 3px 0 0;
+    border: 1px solid #d8d8d8;
+    border-radius:5px;
+}
+
+.gitBox h3{
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 9px 10px 10px;
+    font-size: 16px;
+    font-weight:bold;
+    line-height: 17px;
+    display: block;
+    border-radius:5px;
+}
+
+.leftLogin{
+    float:left;
+    margin:10px 0px 10px 0px;
+}
+
+.appScreenshots{
+    padding:10px 50px 10px 40px;
+    width:50%;
+    float:left;
+    margin:10px 0px 10px 0px;
+    display:none;
+    border-left:1px solid #d8d8d8;
+}
+
+.appScreenshots img{
+    width:100%;
+    height:100%;
+}
+
+.signInForm{
+    width:247px;
+    margin:0 auto;
+}
+
+.clear{
+    clear:both;
+}
+
+.btn{
+    transition: background-color 0.5s ease;
+}
+
+.btnCustom{
+    border-color: #0099e6;
+    background-color: #0099e6;
+    color:#fff;
+    padding: 17px 45px;
+}
+
+.btnCustom:hover{
+    background-color: #0088cc;
+    border-color: #0088cc;
+    color:#fff;
+}
+
 /* Loading */
 
 .svgCenter {
@@ -220,3 +252,62 @@ nav.navbar-default .navbar-toggle {
 @media print {
     .btn-start, .btn-print{display:none!important;}
 }
+
+/* Mobile view */
+
+@media (min-width: 268px) {
+    .nav-justified>li {
+        display: table-cell;
+        width: 1%;
+    }
+
+}
+
+
+@media (min-width: 300px) {
+    nav.navbar>.container .navbar-brand,
+    nav.navbar>.container-fluid .navbar-brand {
+        font-size: 20px;
+    }
+    
+    .btn-container{
+        text-align:center;
+        margin-bottom:10px;
+    }
+    
+    .btn-logout{
+        float:none!important;
+    }
+    
+    .leftLogin{
+        width:100%;
+        padding:20px;
+    }
+    
+}
+
+@media (min-width: 768px) {
+    ul.navbar-nav {
+        margin-left: 30px;
+    }
+    
+    .btn-container{
+        text-align:inherit;
+        margin-bottom:0;
+    }
+    
+    .btn-logout{
+        float:right!important;
+    }
+    
+    .appScreenshots{
+        display:block;
+    }
+    
+    .leftLogin{
+        width:50%;
+        padding:60px 20px;
+    }
+    
+}
+
