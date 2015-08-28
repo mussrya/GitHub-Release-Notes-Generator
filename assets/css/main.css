@@ -27,7 +27,7 @@ div.containerLg {
     height: 16px;
 }
 
-.btn-start{
+.btn-start, .btn-print{
     margin-bottom: 15px;
 }
 
@@ -91,7 +91,7 @@ nav.navbar-default .navbar-toggle {
 .results {
     box-shadow: 0px 0px 20px #888888;
     padding: 10px 20px 20px 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .pre {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
