@@ -27,6 +27,10 @@ div.containerLg {
     height: 16px;
 }
 
+.btnStart{
+    margin-bottom: 15px;
+}
+
 /* Header */
 
 nav.navbar-default {

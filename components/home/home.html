@@ -59,7 +59,6 @@
                     <div class="gitBox">
                         <h3>Select a repository</h3>
                         <div class="gitBoxIn">
-                            <br/>
                             <input type="text" ng-model="milestoneSearch" class="form-control" placeholder="search milestones">
 
                             <div ng-repeat="milestone in filteredMilestonesData = (milestonesData | filter:milestoneSearch) | orderBy:'state'">
