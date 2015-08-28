@@ -39,8 +39,8 @@
                 </div>
                 <div ng-if="tokenSet == true && repoSet == false && repoData">
                     <div class="gitBox">
+                        <h3>Select a repository</h3>
                         <div class="gitBoxIn">
-                            <h3>Select a repository</h3>
                             <input type="text" ng-model="repoSearch" class="form-control" placeholder="search repos">
                             <div ng-repeat="repo in filteredRepoData = (repoData | filter:repoSearch)">
                                 <div class="radio">
@@ -57,8 +57,8 @@
                 </div>
                 <div ng-if="tokenSet == true && repoSet == true && milestoneName == false && milestonesData">
                     <div class="gitBox">
+                        <h3>Select a repository</h3>
                         <div class="gitBoxIn">
-                            <h3>Select a repository</h3>
                             <br/>
                             <input type="text" ng-model="milestoneSearch" class="form-control" placeholder="search milestones">
 
