@@ -39,33 +39,40 @@
                 </div>
                 <div ng-if="tokenSet == true && repoSet == false && repoData">
                     <div class="gitBox">
-                        <h3>Select a repository</h3>
-                        <input type="text" ng-model="repoSearch" class="form-control" placeholder="search repos">
-                        <div ng-repeat="repo in filteredRepoData = (repoData | filter:repoSearch)">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" class="radio" name="optrepo" ng-model="repoName" ng-click="saveRepo(repo.full_name)"> {{repo.full_name}}</label>
+                        <div class="gitBoxIn">
+                            <h3>Select a repository</h3>
+                            <input type="text" ng-model="repoSearch" class="form-control" placeholder="search repos">
+                            <div ng-repeat="repo in filteredRepoData = (repoData | filter:repoSearch)">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" class="radio" name="optrepo" ng-model="repoName" ng-click="saveRepo(repo.full_name)"> {{repo.full_name}}</label>
+                                </div>
                             </div>
-                        </div>
-                        <div ng-if="!filteredRepoData.length">
-                            <br/>
-                            <p>No results found</p>
+                            <div ng-if="!filteredRepoData.length">
+                                <br/>
+                                <p>No results found</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div ng-if="tokenSet == true && repoSet == true && milestoneName == false && milestonesData">
-                    <br/>
-                    <input type="text" ng-model="milestoneSearch" class="form-control" placeholder="search milestones">
+                    <div class="gitBox">
+                        <div class="gitBoxIn">
+                            <h3>Select a repository</h3>
+                            <br/>
+                            <input type="text" ng-model="milestoneSearch" class="form-control" placeholder="search milestones">
 
-                    <div ng-repeat="milestone in filteredMilestonesData = (milestonesData | filter:milestoneSearch) | orderBy:'state'">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" class="radio" name="optmilestone" ng-model="milestoneName" ng-click="saveMilestone(milestone.title, milestone.number)"> {{milestone.title}} - (state: {{milestone.state}})</label>
+                            <div ng-repeat="milestone in filteredMilestonesData = (milestonesData | filter:milestoneSearch) | orderBy:'state'">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" class="radio" name="optmilestone" ng-model="milestoneName" ng-click="saveMilestone(milestone.title, milestone.number)"> {{milestone.title}} - (state: {{milestone.state}})</label>
+                                </div>
+                            </div>
+                            <div ng-if="!filteredMilestonesData.length">
+                                <br/>
+                                <p>No results found</p>
+                            </div>
                         </div>
-                    </div>
-                    <div ng-if="!filteredMilestonesData.length">
-                        <br/>
-                        <p>No results found</p>
                     </div>
                 </div>
                 <div class="svgCenter dashboard" ng-if="loading">

@@ -27,10 +27,6 @@ div.containerLg {
     height: 16px;
 }
 
-input[type=radio]:checked{
-    background-color: #fff9ea;
-}
-
 /* Header */
 
 nav.navbar-default {
@@ -190,6 +186,14 @@ nav.navbar-default .navbar-toggle {
     line-height: 17px;
     display: block;
     border-radius:5px;
+}
+
+.gitBoxIn{
+    padding:20px;
+}
+
+.radio{
+    border-bottom: 1px solid #eee;
 }
 
 .leftLogin{
