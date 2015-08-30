@@ -31,6 +31,8 @@ div.containerLg {
     margin-bottom: 15px;
 }
 
+
+
 /* Header */
 
 nav.navbar-default {
@@ -47,7 +49,6 @@ nav.navbar-default .navbar-brand {
     font-weight: normal;
 }
 nav.navbar-default .navbar-nav>li>a {
-    color: #FFFFFF;
     transition: background-color 0.5s ease;
 }
 a.navbarTitle:hover,
@@ -86,7 +87,16 @@ nav.navbar-default .navbar-toggle {
     background: #fff;
 }
 
+
+.img-responsive{
+    padding:20px;
+}
+
 /* Home */
+
+.home{
+    padding:20px;
+}
 
 .results {
     box-shadow: 0px 0px 20px #888888;
@@ -179,6 +189,7 @@ nav.navbar-default .navbar-toggle {
     border-radius: 3px 3px 0 0;
     border: 1px solid #d8d8d8;
     border-radius:5px;
+    margin-top:10px;
 }
 
 .gitBox h3{
@@ -215,11 +226,6 @@ nav.navbar-default .navbar-toggle {
     border-left:1px solid #d8d8d8;
 }
 
-.appScreenshots img{
-    width:100%;
-    height:100%;
-}
-
 .signInForm{
     width:247px;
     margin:0 auto;
@@ -244,6 +250,11 @@ nav.navbar-default .navbar-toggle {
     background-color: #0088cc;
     border-color: #0088cc;
     color:#fff;
+}
+
+/* About */
+.about{
+    padding:20px;
 }
 
 /* Loading */
@@ -296,6 +307,15 @@ nav.navbar-default .navbar-toggle {
 }
 
 @media (min-width: 768px) {
+    
+    .border{
+        border-right:1px solid #d8d8d8;
+    }
+    
+    .borderLeft{
+        border-left: 1px solid #d8d8d8;
+    }
+    
     ul.navbar-nav {
         margin-left: 30px;
     }
@@ -315,7 +335,6 @@ nav.navbar-default .navbar-toggle {
     
     .leftLogin{
         width:50%;
-        padding:60px 20px;
     }
     
 }

@@ -6,6 +6,8 @@ app.config(function ($routeProvider) {
   }).when('/auth', {
     templateUrl: 'components/auth/auth.html',
     controller: 'authController'
+  }).when('/about', {
+    templateUrl: 'components/about/about.html'
   }).
   otherwise({
     redirectTo: '/home'
